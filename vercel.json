@@ -2,6 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "pnpm exec email build --dir emails -p pnpm",
   "outputDirectory": ".react-email/.next",
-  "installCommand": "pnpm install",
+  "installCommand": "pnpm install --no-frozen-lockfile",
   "framework": "nextjs"
 }
