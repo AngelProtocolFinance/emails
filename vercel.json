@@ -3,5 +3,5 @@
   "buildCommand": "pnpm exec email build --dir emails -p pnpm",
   "outputDirectory": ".react-email/.next",
   "installCommand": "pnpm install",
-  "framework": "nextjs"
+  "framework": null
 }
