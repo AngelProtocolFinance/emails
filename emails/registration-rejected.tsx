@@ -1,10 +1,9 @@
-import { RegistrationRejected } from "../src/templates/registration/rejected";
+import { registration_rejected } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <RegistrationRejected
-      registrant_first_name="Jane"
-      rejection_reason="The organization's 501(c)(3) status could not be verified. Please provide a valid IRS determination letter."
-    />
-  );
-}
+const { node } = registration_rejected.template({
+	registrant_first_name: "Jane",
+	rejection_reason:
+		"The organization's 501(c)(3) status could not be verified. Please provide a valid IRS determination letter.",
+});
+
+export default () => node;

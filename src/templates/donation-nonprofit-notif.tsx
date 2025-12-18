@@ -1,12 +1,25 @@
 import { Hr, Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { KeyValue } from "../../components/key-value";
-import { MailTo } from "../../components/mail-to";
-import { DAPP_URL, EMAILS } from "../../constants";
-import { format_amount } from "../../helpers";
-import type { Donation } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { KeyValue } from "../components/key-value";
+import { MailTo } from "../components/mail-to";
+import { DAPP_URL, EMAILS } from "../constants";
+import { format_amount } from "../helpers";
+import type { IAmount, IDonor } from "../types";
 
-export function NonprofitNotif({
+export interface IData {
+	transaction_id: string;
+	transaction_date: string;
+	amount: IAmount;
+	nonprofit_name: string;
+	program_name?: string;
+	is_recurring?: boolean;
+	donor?: IDonor;
+	claimed?: boolean;
+	nonprofit_id: string;
+	msg_to_npo?: string;
+}
+
+function Jsx({
 	transaction_id,
 	transaction_date,
 	amount,
@@ -15,7 +28,7 @@ export function NonprofitNotif({
 	program_name,
 	is_recurring,
 	msg_to_npo,
-}: Donation.INonprofitNotifProps) {
+}: IData) {
 	return (
 		<EmailLayout
 			type="donation"
@@ -77,7 +90,11 @@ export function NonprofitNotif({
 	);
 }
 
-NonprofitNotif.subject = (props: Donation.INonprofitNotifProps) =>
-	props.claimed
-		? `Donation to ${props.nonprofit_name}`
-		: `Donation to Unclaimed NPO: ${props.nonprofit_id} ${props.nonprofit_name}`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: data.claimed
+			? `Donation to ${data.nonprofit_name}`
+			: `Donation to Unclaimed NPO: ${data.nonprofit_id} ${data.nonprofit_name}`,
+	};
+};

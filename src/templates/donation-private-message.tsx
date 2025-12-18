@@ -1,18 +1,27 @@
 import { Hr, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { MailTo } from "../../components/mail-to";
-import { APP_NAME, EMAILS } from "../../constants";
-import { format_amount } from "../../helpers";
-import type { Donation } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { MailTo } from "../components/mail-to";
+import { APP_NAME, EMAILS } from "../constants";
+import { format_amount } from "../helpers";
+import type { IAmount, IDonor } from "../types";
 
-export function PrivateMessage({
+export interface IData {
+	transaction_id: string;
+	transaction_date: string;
+	amount: IAmount;
+	nonprofit_name: string;
+	donor: IDonor;
+	message: string;
+}
+
+function Jsx({
 	nonprofit_name,
 	donor,
 	message,
 	amount,
 	transaction_id,
 	transaction_date,
-}: Donation.IPrivateMessageProps) {
+}: IData) {
 	return (
 		<EmailLayout
 			type="donation"
@@ -61,5 +70,9 @@ export function PrivateMessage({
 	);
 }
 
-PrivateMessage.subject = (props: Donation.IPrivateMessageProps) =>
-	`Private message from ${props.donor.full_name} with ${format_amount(props.amount)} donation`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `Private message from ${data.donor.full_name} with ${format_amount(data.amount)} donation`,
+	};
+};

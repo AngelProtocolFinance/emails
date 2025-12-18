@@ -1,11 +1,9 @@
-import { RegistrationApproved } from "../src/templates/registration/approved";
+import { registration_approved } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <RegistrationApproved
-      org_name="Save The Rainforest Foundation"
-      registrant_first_name="Jane"
-      endow_id="12345"
-    />
-  );
-}
+const { node } = registration_approved.template({
+	org_name: "Save The Rainforest Foundation",
+	registrant_first_name: "Jane",
+	endow_id: "12345",
+});
+
+export default () => node;

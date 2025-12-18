@@ -1,11 +1,9 @@
-import { MicrodepositAction } from "../src/templates/donation/microdeposit-action";
+import { donation_microdeposit_action } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <MicrodepositAction
-      donor_first_name="Jane"
-      recipient_name="Save The Rainforest Foundation"
-      verification_link="https://better.giving/verify/abc123"
-    />
-  );
-}
+const { node } = donation_microdeposit_action.template({
+	donor_first_name: "Jane",
+	recipient_name: "Save The Rainforest Foundation",
+	verification_link: "https://better.giving/verify/abc123",
+});
+
+export default () => node;

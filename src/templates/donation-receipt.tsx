@@ -1,11 +1,27 @@
 import { Hr, Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { KeyValue } from "../../components/key-value";
-import { APP_NAME, DAPP_URL } from "../../constants";
-import { format_amount } from "../../helpers";
-import type { Donation } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { KeyValue } from "../components/key-value";
+import { APP_NAME, DAPP_URL } from "../constants";
+import { format_amount } from "../helpers";
+import type { IAmount, IDonor } from "../types";
 
-export function DonationReceipt({
+export interface IData {
+	transaction_id: string;
+	transaction_date: string;
+	amount: IAmount;
+	nonprofit_name: string;
+	program_name?: string;
+	is_recurring?: boolean;
+	/** is donation to Better Giving directly (vs through NPO) */
+	is_bg?: boolean;
+	donor: IDonor;
+	/** tax receipt ID - if provided, shows as tax receipt */
+	tax_receipt_id?: string;
+	/** custom message from nonprofit */
+	nonprofit_msg?: string;
+}
+
+function Jsx({
 	transaction_id,
 	transaction_date,
 	amount,
@@ -16,7 +32,7 @@ export function DonationReceipt({
 	nonprofit_msg,
 	is_recurring,
 	is_bg,
-}: Donation.IReceiptProps) {
+}: IData) {
 	return (
 		<EmailLayout type="donation" preview_text="Thank you for donating">
 			<Text>Hi {donor.first_name}</Text>
@@ -107,5 +123,9 @@ export function DonationReceipt({
 	);
 }
 
-DonationReceipt.subject = (props: Donation.IReceiptProps) =>
-	`${props.tax_receipt_id ? "Tax receipt: " : ""}Thank you for donating`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `${data.tax_receipt_id ? "Tax receipt: " : ""}Thank you for donating`,
+	};
+};

@@ -1,9 +1,12 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { APP_NAME } from "../../constants";
-import type { Registration } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { APP_NAME } from "../constants";
 
-export function RegistrationNew({ reference_id }: Registration.INewProps) {
+export interface IData {
+	reference_id: string;
+}
+
+function Jsx({ reference_id }: IData) {
 	return (
 		<EmailLayout
 			type="registration"
@@ -40,4 +43,9 @@ export function RegistrationNew({ reference_id }: Registration.INewProps) {
 	);
 }
 
-RegistrationNew.subject = () => `Welcome to ${APP_NAME}!`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `Welcome to ${APP_NAME}!`,
+	};
+};

@@ -1,13 +1,14 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { APP_NAME, DAPP_URL } from "../../constants";
-import type { IEndowAdminNewProps } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { APP_NAME, DAPP_URL } from "../constants";
 
-export function EndowAdminNew({
-	first_name,
-	invitor,
-	endow_name,
-}: IEndowAdminNewProps) {
+export interface IData {
+	first_name: string;
+	endow_name: string;
+	invitor: string;
+}
+
+function Jsx({ first_name, invitor, endow_name }: IData) {
 	return (
 		<EmailLayout
 			preview_text={`You've been invited to administer ${endow_name}`}
@@ -39,4 +40,9 @@ export function EndowAdminNew({
 	);
 }
 
-EndowAdminNew.subject = () => `${APP_NAME}: Administrator account invitation`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `${APP_NAME}: Administrator account invitation`,
+	};
+};

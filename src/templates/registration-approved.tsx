@@ -1,13 +1,14 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { APP_NAME, DAPP_URL } from "../../constants";
-import type { Registration } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { APP_NAME, DAPP_URL } from "../constants";
 
-export function RegistrationApproved({
-	org_name,
-	registrant_first_name,
-	endow_id,
-}: Registration.IApprovedProps) {
+export interface IData {
+	org_name: string;
+	registrant_first_name: string;
+	endow_id: string;
+}
+
+function Jsx({ org_name, registrant_first_name, endow_id }: IData) {
 	const profile_link = `${DAPP_URL}/profile/${endow_id}`;
 
 	return (
@@ -57,5 +58,9 @@ export function RegistrationApproved({
 	);
 }
 
-RegistrationApproved.subject = (props: Registration.IApprovedProps) =>
-	`Good news! ${props.org_name}'s account has been created!`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `Good news! ${data.org_name}'s account has been created!`,
+	};
+};

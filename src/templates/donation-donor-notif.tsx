@@ -1,16 +1,24 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { APP_NAME, DAPP_URL } from "../../constants";
-import type { Donation } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { APP_NAME, DAPP_URL } from "../constants";
 
-export function DonorNotif({
+export interface IData {
+	donor_first_name: string;
+	nonprofit_name: string;
+	transaction_id: string;
+	program_name?: string;
+	is_guest?: boolean;
+	is_recurring?: boolean;
+}
+
+function Jsx({
 	donor_first_name,
 	transaction_id,
 	nonprofit_name,
 	is_guest,
 	is_recurring,
 	program_name,
-}: Donation.IDonorNotifProps) {
+}: IData) {
 	return (
 		<EmailLayout preview_text="Thank you for donating">
 			<Text>Hi {donor_first_name},</Text>
@@ -48,4 +56,9 @@ export function DonorNotif({
 	);
 }
 
-DonorNotif.subject = () => "Thank you for donating";
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: "Thank you for donating",
+	};
+};

@@ -1,14 +1,12 @@
-import { DonorNotif } from "../src/templates/donation/donor-notif";
+import { donation_donor_notif } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <DonorNotif
-      donor_first_name="Jane"
-      transaction_id="TXN-2025-001234"
-      nonprofit_name="Save The Rainforest Foundation"
-      program_name="Amazon Conservation"
-      is_guest={true}
-      is_recurring={false}
-    />
-  );
-}
+const { node } = donation_donor_notif.template({
+	donor_first_name: "Jane",
+	transaction_id: "TXN-2025-001234",
+	nonprofit_name: "Save The Rainforest Foundation",
+	program_name: "Amazon Conservation",
+	is_guest: true,
+	is_recurring: false,
+});
+
+export default () => node;

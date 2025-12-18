@@ -1,10 +1,8 @@
-import { Banking } from "../src/templates/banking";
+import { banking } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <Banking
-      action="default"
-      account_summary="Chase Bank ending in 1234"
-    />
-  );
-}
+const { node } = banking.template({
+	action: "default",
+	account_summary: "Chase Bank ending in 1234",
+});
+
+export default () => node;

@@ -1,11 +1,9 @@
-import { EndowAdminNew } from "../src/templates/admin/endow-admin-new";
+import { admin_endow_admin_new } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <EndowAdminNew
-      first_name="John"
-      invitor="Jane Smith"
-      endow_name="Save The Rainforest Foundation"
-    />
-  );
-}
+const { node } = admin_endow_admin_new.template({
+	first_name: "John",
+	invitor: "Jane Smith",
+	endow_name: "Save The Rainforest Foundation",
+});
+
+export default () => node;

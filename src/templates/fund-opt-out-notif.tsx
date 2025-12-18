@@ -1,8 +1,12 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import type { IFundOptOutProps } from "../../types";
+import { EmailLayout } from "../components/email-layout";
 
-export function FundOptOutNotif({ first_name, endow_name }: IFundOptOutProps) {
+export interface IData {
+	first_name: string;
+	endow_name: string;
+}
+
+function Jsx({ first_name, endow_name }: IData) {
 	return (
 		<EmailLayout
 			type="fund"
@@ -17,5 +21,9 @@ export function FundOptOutNotif({ first_name, endow_name }: IFundOptOutProps) {
 	);
 }
 
-FundOptOutNotif.subject = (props: IFundOptOutProps) =>
-	`${props.endow_name} opted out of your fundraiser.`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `${data.endow_name} opted out of your fundraiser.`,
+	};
+};

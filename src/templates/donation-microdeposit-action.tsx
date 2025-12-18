@@ -1,14 +1,15 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { MailTo } from "../../components/mail-to";
-import { APP_NAME, DAPP_URL, EMAILS } from "../../constants";
-import type { Donation } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { MailTo } from "../components/mail-to";
+import { APP_NAME, DAPP_URL, EMAILS } from "../constants";
 
-export function MicrodepositAction({
-	donor_first_name,
-	recipient_name,
-	verification_link,
-}: Donation.IMicrodepositActionProps) {
+export interface IData {
+	donor_first_name: string;
+	recipient_name: string;
+	verification_link: string;
+}
+
+function Jsx({ donor_first_name, recipient_name, verification_link }: IData) {
 	return (
 		<EmailLayout
 			type="donation"
@@ -61,5 +62,9 @@ export function MicrodepositAction({
 	);
 }
 
-MicrodepositAction.subject = (props: Donation.IMicrodepositActionProps) =>
-	`Complete your donation to ${props.recipient_name} - Bank verification needed`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `Complete your donation to ${data.recipient_name} - Bank verification needed`,
+	};
+};

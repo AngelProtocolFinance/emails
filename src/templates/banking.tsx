@@ -1,11 +1,11 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { MailTo } from "../../components/mail-to";
-import { APP_NAME, DAPP_URL, EMAILS } from "../../constants";
+import { EmailLayout } from "../components/email-layout";
+import { MailTo } from "../components/mail-to";
+import { APP_NAME, DAPP_URL, EMAILS } from "../constants";
 
 type Action = "rejected" | "approved" | "default" | "new";
 
-export interface BankingProps {
+export interface IData {
 	action: Action;
 	account_summary: string;
 	rejection_reason?: string;
@@ -25,11 +25,7 @@ const subjects: Record<Action, string> = {
 	default: `${APP_NAME}: Banking application received`,
 };
 
-export function Banking({
-	action,
-	account_summary,
-	rejection_reason,
-}: BankingProps) {
+function Jsx({ action, account_summary, rejection_reason }: IData) {
 	return (
 		<EmailLayout
 			preview_text={`Banking details update: ${account_summary} has been ${descriptions[action]}`}
@@ -64,4 +60,9 @@ export function Banking({
 	);
 }
 
-Banking.subject = (props: BankingProps) => subjects[props.action];
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: subjects[data.action],
+	};
+};

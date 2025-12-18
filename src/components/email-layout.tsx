@@ -27,7 +27,7 @@ export function EmailLayout({
 	return (
 		<Html lang="en">
 			<Head>
-				<title>Email from {APP_NAME}</title>
+				<title>{`Email from ${APP_NAME}`}</title>
 			</Head>
 			{preview_text && <Preview>{preview_text}</Preview>}
 			<Body

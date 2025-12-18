@@ -1,14 +1,15 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { MailTo } from "../../components/mail-to";
-import { APP_NAME, EMAILS } from "../../constants";
-import type { Donation } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { MailTo } from "../components/mail-to";
+import { APP_NAME, EMAILS } from "../constants";
 
-export function DonationError({
-	donor_first_name,
-	recipient_name,
-	error_message,
-}: Donation.IErrorProps) {
+export interface IData {
+	donor_first_name: string;
+	recipient_name: string;
+	error_message: string;
+}
+
+function Jsx({ donor_first_name, recipient_name, error_message }: IData) {
 	return (
 		<EmailLayout
 			type="donation"
@@ -40,5 +41,9 @@ export function DonationError({
 	);
 }
 
-DonationError.subject = (props: Donation.IErrorProps) =>
-	`Donation for ${props.recipient_name} failed`;
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: `Donation for ${data.recipient_name} failed`,
+	};
+};

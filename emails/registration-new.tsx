@@ -1,5 +1,7 @@
-import { RegistrationNew } from "../src/templates/registration/new";
+import { registration_new } from "../src/templates";
 
-export default function Preview() {
-  return <RegistrationNew reference_id="REG-2025-001234" />;
-}
+const { node } = registration_new.template({
+	reference_id: "REG-2025-001234",
+});
+
+export default () => node;

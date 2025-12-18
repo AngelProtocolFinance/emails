@@ -1,13 +1,14 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../../components/email-layout";
-import { MailTo } from "../../components/mail-to";
-import { EMAILS } from "../../constants";
-import type { Registration } from "../../types";
+import { EmailLayout } from "../components/email-layout";
+import { MailTo } from "../components/mail-to";
+import { EMAILS } from "../constants";
 
-export function RegistrationRejected({
-	registrant_first_name,
-	rejection_reason,
-}: Registration.IRejectedProps) {
+export interface IData {
+	registrant_first_name: string;
+	rejection_reason: string;
+}
+
+function Jsx({ registrant_first_name, rejection_reason }: IData) {
 	return (
 		<EmailLayout
 			type="registration"
@@ -29,4 +30,9 @@ export function RegistrationRejected({
 	);
 }
 
-RegistrationRejected.subject = () => "Your application has been rejected.";
+export const template = (data: IData) => {
+	return {
+		node: <Jsx {...data} />,
+		subject: "Your application has been rejected.",
+	};
+};

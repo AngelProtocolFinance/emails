@@ -1,10 +1,8 @@
-import { FundOptOutNotif } from "../src/templates/admin/fund-opt-out-notif";
+import { fund_opt_out_notif } from "../src/templates";
 
-export default function Preview() {
-  return (
-    <FundOptOutNotif
-      first_name="John"
-      endow_name="Wildlife Conservation Society"
-    />
-  );
-}
+const { node } = fund_opt_out_notif.template({
+	first_name: "John",
+	endow_name: "Wildlife Conservation Society",
+});
+
+export default () => node;
