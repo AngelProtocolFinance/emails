@@ -21,6 +21,10 @@
     "dist"
   ],
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AngelProtocolFinance/emails"
+  },
   "publishConfig": {
     "access": "public"
   },
