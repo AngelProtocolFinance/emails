@@ -3,7 +3,7 @@ import { EmailLayout } from "../../components/email-layout";
 import { APP_NAME } from "../../constants";
 import type { Registration } from "../../types";
 
-export function RegistrationNew({ reference_id }: Registration.NewProps) {
+export function RegistrationNew({ reference_id }: Registration.INewProps) {
   return (
     <EmailLayout
       type="registration"

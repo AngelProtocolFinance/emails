@@ -12,7 +12,7 @@ export function PrivateMessage({
   amount,
   transaction_id,
   transaction_date,
-}: Donation.PrivateMessageProps) {
+}: Donation.IPrivateMessageProps) {
   return (
     <EmailLayout
       type="donation"
@@ -61,5 +61,5 @@ export function PrivateMessage({
   );
 }
 
-PrivateMessage.subject = (props: Donation.PrivateMessageProps) =>
+PrivateMessage.subject = (props: Donation.IPrivateMessageProps) =>
   `Private message from ${props.donor.full_name} with ${format_amount(props.amount)} donation`;

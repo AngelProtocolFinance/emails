@@ -1,13 +1,13 @@
 import { Link, Text } from "@react-email/components";
 import { EmailLayout } from "../../components/email-layout";
 import { APP_NAME, DAPP_URL } from "../../constants";
-import type { EndowAdminNewProps } from "../../types";
+import type { IEndowAdminNewProps } from "../../types";
 
 export function EndowAdminNew({
   first_name,
   invitor,
   endow_name,
-}: EndowAdminNewProps) {
+}: IEndowAdminNewProps) {
   return (
     <EmailLayout preview_text={`You've been invited to administer ${endow_name}`}>
       <Text>{first_name},</Text>

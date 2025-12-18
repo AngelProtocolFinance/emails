@@ -7,7 +7,7 @@ import type { Registration } from "../../types";
 export function RegistrationRejected({
   registrant_first_name,
   rejection_reason,
-}: Registration.RejectedProps) {
+}: Registration.IRejectedProps) {
   return (
     <EmailLayout
       type="registration"

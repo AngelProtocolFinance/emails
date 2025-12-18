@@ -7,7 +7,7 @@ export function RegistrationApproved({
   org_name,
   registrant_first_name,
   endow_id,
-}: Registration.ApprovedProps) {
+}: Registration.IApprovedProps) {
   const profile_link = `${DAPP_URL}/profile/${endow_id}`;
 
   return (
@@ -57,5 +57,5 @@ export function RegistrationApproved({
   );
 }
 
-RegistrationApproved.subject = (props: Registration.ApprovedProps) =>
+RegistrationApproved.subject = (props: Registration.IApprovedProps) =>
   `Good news! ${props.org_name}'s account has been created!`;

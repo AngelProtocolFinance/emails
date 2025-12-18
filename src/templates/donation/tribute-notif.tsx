@@ -10,7 +10,7 @@ export function TributeNotif({
   nonprofit_name,
   amount,
   from_msg,
-}: Donation.TributeNotifProps) {
+}: Donation.ITributeNotifProps) {
   const donor_display = donor.title
     ? `${donor.title} ${donor.full_name}`
     : donor.full_name;
@@ -31,5 +31,5 @@ export function TributeNotif({
   );
 }
 
-TributeNotif.subject = (props: Donation.TributeNotifProps) =>
+TributeNotif.subject = (props: Donation.ITributeNotifProps) =>
   `Donation in honor of ${props.in_honor_of}`;

@@ -8,7 +8,7 @@ export function DonationError({
   donor_first_name,
   recipient_name,
   error_message,
-}: Donation.ErrorProps) {
+}: Donation.IErrorProps) {
   return (
     <EmailLayout
       type="donation"
@@ -40,5 +40,5 @@ export function DonationError({
   );
 }
 
-DonationError.subject = (props: Donation.ErrorProps) =>
+DonationError.subject = (props: Donation.IErrorProps) =>
   `Donation for ${props.recipient_name} failed`;

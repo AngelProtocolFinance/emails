@@ -33,8 +33,8 @@ export { SocialLinks } from "./components/social-links";
 export type {
   Registration,
   Donation,
-  EndowAdminNewProps,
-  FundOptOutProps,
+  IEndowAdminNewProps,
+  IFundOptOutProps,
 } from "./types";
 
 // Constants

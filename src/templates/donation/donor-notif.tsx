@@ -10,7 +10,7 @@ export function DonorNotif({
   is_guest,
   is_recurring,
   program_name,
-}: Donation.DonorNotifProps) {
+}: Donation.IDonorNotifProps) {
   return (
     <EmailLayout preview_text="Thank you for donating">
       <Text>Hi {donor_first_name},</Text>

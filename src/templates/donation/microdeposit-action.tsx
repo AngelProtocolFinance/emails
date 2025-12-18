@@ -8,7 +8,7 @@ export function MicrodepositAction({
   donor_first_name,
   recipient_name,
   verification_link,
-}: Donation.MicrodepositActionProps) {
+}: Donation.IMicrodepositActionProps) {
   return (
     <EmailLayout
       type="donation"
@@ -61,5 +61,5 @@ export function MicrodepositAction({
   );
 }
 
-MicrodepositAction.subject = (props: Donation.MicrodepositActionProps) =>
+MicrodepositAction.subject = (props: Donation.IMicrodepositActionProps) =>
   `Complete your donation to ${props.recipient_name} - Bank verification needed`;

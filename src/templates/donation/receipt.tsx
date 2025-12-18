@@ -16,7 +16,7 @@ export function DonationReceipt({
   nonprofit_msg,
   is_recurring,
   is_bg,
-}: Donation.ReceiptProps) {
+}: Donation.IReceiptProps) {
   return (
     <EmailLayout type="donation" preview_text="Thank you for donating">
       <Text>Hi {donor.first_name}</Text>
@@ -107,5 +107,5 @@ export function DonationReceipt({
   );
 }
 
-DonationReceipt.subject = (props: Donation.ReceiptProps) =>
+DonationReceipt.subject = (props: Donation.IReceiptProps) =>
   `${props.tax_receipt_id ? "Tax receipt: " : ""}Thank you for donating`;

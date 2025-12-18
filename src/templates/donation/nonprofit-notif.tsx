@@ -17,7 +17,7 @@ export function NonprofitNotif({
   program_name,
   is_recurring,
   msg_to_npo,
-}: Donation.NonprofitNotifProps) {
+}: Donation.INonprofitNotifProps) {
   return (
     <EmailLayout
       type="donation"
@@ -79,7 +79,7 @@ export function NonprofitNotif({
   );
 }
 
-NonprofitNotif.subject = (props: Donation.NonprofitNotifProps) =>
+NonprofitNotif.subject = (props: Donation.INonprofitNotifProps) =>
   props.claimed
     ? `Donation to ${props.nonprofit_name}`
     : `Donation to Unclaimed NPO: ${props.nonprofit_id} ${props.nonprofit_name}`;
