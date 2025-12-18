@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.3.2
+
+### Patch Changes
+
+- Remove templates barrel file and simplify exports
+
 ## 1.3.1
 
 ### Patch Changes
