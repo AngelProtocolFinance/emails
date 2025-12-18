@@ -1,18 +1,18 @@
 // Templates
 export {
-  DonationReceipt,
-  NonprofitNotif,
-  DonorNotif,
-  TributeNotif,
-  MicrodepositAction,
-  DonationError,
-  PrivateMessage,
+	DonationReceipt,
+	NonprofitNotif,
+	DonorNotif,
+	TributeNotif,
+	MicrodepositAction,
+	DonationError,
+	PrivateMessage,
 } from "./templates/donation";
 
 export {
-  RegistrationNew,
-  RegistrationApproved,
-  RegistrationRejected,
+	RegistrationNew,
+	RegistrationApproved,
+	RegistrationRejected,
 } from "./templates/registration";
 
 export { Banking } from "./templates/banking";
@@ -31,10 +31,10 @@ export { SocialLinks } from "./components/social-links";
 
 // Types
 export type {
-  Registration,
-  Donation,
-  IEndowAdminNewProps,
-  IFundOptOutProps,
+	Registration,
+	Donation,
+	IEndowAdminNewProps,
+	IFundOptOutProps,
 } from "./types";
 
 // Constants
