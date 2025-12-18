@@ -1,6 +1,6 @@
-import { donation_donor_notif } from "../src/templates";
+import { template } from "../src/templates/donation-donor-notif";
 
-const { node } = donation_donor_notif.template({
+const { node } = template({
 	donor_first_name: "Jane",
 	transaction_id: "TXN-2025-001234",
 	nonprofit_name: "Save The Rainforest Foundation",

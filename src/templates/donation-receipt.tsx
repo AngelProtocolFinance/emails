@@ -18,7 +18,7 @@ export interface IData extends IDonation {
 
 function Jsx(d: IData) {
 	return (
-		<EmailLayout type="donation" preview_text="Thank you for donating">
+		<EmailLayout type="donation">
 			<Text>Hi {d.from.first_name}</Text>
 			<Text>
 				We want to express our deepest gratitude for your generous{" "}

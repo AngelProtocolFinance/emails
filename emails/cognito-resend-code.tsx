@@ -1,6 +1,6 @@
-import { cognito_resend_code } from "../src/templates";
+import { template } from "../src/templates/cognito-resend-code";
 
-const { node } = cognito_resend_code.template({
+const { node } = template({
 	code: "261538",
 	first_name: "John",
 });

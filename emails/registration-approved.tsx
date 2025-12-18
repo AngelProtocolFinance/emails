@@ -1,6 +1,6 @@
-import { registration_approved } from "../src/templates";
+import { template } from "../src/templates/registration-approved";
 
-const { node } = registration_approved.template({
+const { node } = template({
 	org_name: "Save The Rainforest Foundation",
 	registrant_first_name: "Jane",
 	endow_id: "12345",

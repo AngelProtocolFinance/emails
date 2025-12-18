@@ -1,6 +1,6 @@
-import { banking } from "../src/templates";
+import { template } from "../src/templates/banking";
 
-const { node } = banking.template({
+const { node } = template({
 	action: "default",
 	account_summary: "Chase Bank ending in 1234",
 });

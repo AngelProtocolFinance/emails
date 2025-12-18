@@ -1,6 +1,6 @@
-import { cognito_signup } from "../src/templates";
+import { template } from "../src/templates/cognito-signup";
 
-const { node } = cognito_signup.template({
+const { node } = template({
 	code: "482916",
 	first_name: "John",
 });

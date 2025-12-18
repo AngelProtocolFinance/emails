@@ -13,7 +13,6 @@ function Jsx({ from_name, to_name, verification_link }: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`Complete your donation to ${to_name} - Bank verification needed`}
 		>
 			<Text>Hi {from_name},</Text>
 			<Text>

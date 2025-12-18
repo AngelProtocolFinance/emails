@@ -12,7 +12,6 @@ function Jsx({ registrant_first_name, rejection_reason }: IData) {
 	return (
 		<EmailLayout
 			type="registration"
-			preview_text="Your application has been rejected"
 		>
 			<Text>Hi {registrant_first_name},</Text>
 			<Text>

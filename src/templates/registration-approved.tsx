@@ -14,7 +14,6 @@ function Jsx({ org_name, registrant_first_name, endow_id }: IData) {
 	return (
 		<EmailLayout
 			type="registration"
-			preview_text={`Good news! ${org_name}'s account has been created!`}
 		>
 			<Text>Hi {registrant_first_name},</Text>
 			<Text>

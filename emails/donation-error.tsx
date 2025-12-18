@@ -1,6 +1,6 @@
-import { donation_error } from "../src/templates";
+import { template } from "../src/templates/donation-error";
 
-const { node } = donation_error.template({
+const { node } = template({
 	donor_first_name: "Jane",
 	recipient_name: "Save The Rainforest Foundation",
 	error_message:

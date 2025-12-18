@@ -9,7 +9,7 @@ export interface IData {
 
 function Jsx({ code, first_name }: IData) {
 	return (
-		<EmailLayout preview_text={`Your new ${APP_NAME} verification code`}>
+		<EmailLayout>
 			<Text>{first_name ? `Hi ${first_name},` : "Hello,"}</Text>
 			<Text>
 				You requested a new verification code for your {APP_NAME} account.

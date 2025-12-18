@@ -4,7 +4,6 @@ import {
 	Head,
 	Hr,
 	Html,
-	Preview,
 	Section,
 	Text,
 } from "@react-email/components";
@@ -13,14 +12,12 @@ import { APP_NAME } from "../constants";
 import { SocialLinks } from "./social-links";
 
 export type EmailLayoutProps = PropsWithChildren<{
-	preview_text?: string;
 	type?: "registration" | "donation" | "fund";
 	bottom_content?: ReactNode;
 }>;
 
 export function EmailLayout({
 	children,
-	preview_text,
 	type,
 	bottom_content,
 }: EmailLayoutProps) {
@@ -29,7 +26,6 @@ export function EmailLayout({
 			<Head>
 				<title>{`Email from ${APP_NAME}`}</title>
 			</Head>
-			{preview_text && <Preview>{preview_text}</Preview>}
 			<Body
 				style={{
 					fontFamily: "sans-serif",

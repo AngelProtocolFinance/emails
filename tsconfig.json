@@ -15,8 +15,8 @@
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "."
   },
-  "include": ["src"],
+  "include": ["src", "emails"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,6 +1,6 @@
-import { donation_private_message } from "../src/templates";
+import { template } from "../src/templates/donation-private-message";
 
-const { node } = donation_private_message.template({
+const { node } = template({
 	to_name: "Save The Rainforest Foundation",
 	from: {
 		first_name: "John",

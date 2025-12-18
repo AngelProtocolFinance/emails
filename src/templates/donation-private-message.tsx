@@ -14,7 +14,6 @@ function Jsx(d: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`Private message from ${d.from.full_name} with ${format_amount(d.amount)} donation`}
 		>
 			<Text>
 				{d.from.full_name} has sent {d.to_name} a private message thru{" "}

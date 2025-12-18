@@ -1,5 +1,16 @@
 # @better-giving/react-emails
 
+## 1.3.3
+
+### Patch Changes
+
+- Remove Preview component to fix AWS Cognito email validation
+
+  - Remove `preview_text` prop from EmailLayout (was using @react-email Preview component)
+  - The Preview component added invisible Unicode characters that violated Cognito's email template regex
+  - Update email previews to import `template` directly from template files
+  - Include `emails` directory in TypeScript type checking
+
 ## 1.3.2
 
 ### Patch Changes

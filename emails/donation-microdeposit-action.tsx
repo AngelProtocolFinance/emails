@@ -1,6 +1,6 @@
-import { donation_microdeposit_action } from "../src/templates";
+import { template } from "../src/templates/donation-microdeposit-action";
 
-const { node } = donation_microdeposit_action.template({
+const { node } = template({
 	from_name: "Jane",
 	to_name: "Save The Rainforest Foundation",
 	verification_link: "https://better.giving/verify/abc123",

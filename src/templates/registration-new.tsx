@@ -10,7 +10,6 @@ function Jsx({ reference_id }: IData) {
 	return (
 		<EmailLayout
 			type="registration"
-			preview_text={`Welcome to ${APP_NAME}! Your reference: ${reference_id}`}
 		>
 			<Text>Hello,</Text>
 			<Text>

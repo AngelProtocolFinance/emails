@@ -1,6 +1,6 @@
-import { donation_tribute_notif } from "../src/templates";
+import { template } from "../src/templates/donation-tribute-notif";
 
-const { node } = donation_tribute_notif.template({
+const { node } = template({
 	in_honor_of: "Grandma Rose",
 	notif_to_full_name: "Mary Johnson",
 	from: {

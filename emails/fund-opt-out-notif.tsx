@@ -1,6 +1,6 @@
-import { fund_opt_out_notif } from "../src/templates";
+import { template } from "../src/templates/fund-opt-out-notif";
 
-const { node } = fund_opt_out_notif.template({
+const { node } = template({
 	from_fname: "John",
 	to_name: "Wildlife Conservation Society",
 });

@@ -1,6 +1,6 @@
-import { admin_endow_admin_new } from "../src/templates";
+import { template } from "../src/templates/admin-endow-admin-new";
 
-const { node } = admin_endow_admin_new.template({
+const { node } = template({
 	first_name: "John",
 	invitor: "Jane Smith",
 	endow_name: "Save The Rainforest Foundation",

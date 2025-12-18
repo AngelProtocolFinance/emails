@@ -28,7 +28,6 @@ const subjects: Record<Action, string> = {
 function Jsx({ action, account_summary, rejection_reason }: IData) {
 	return (
 		<EmailLayout
-			preview_text={`Banking details update: ${account_summary} has been ${descriptions[action]}`}
 			bottom_content={
 				<Text style={{ textAlign: "center", fontSize: 12, color: "gray" }}>
 					Getting too many emails?{" "}

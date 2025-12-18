@@ -1,6 +1,6 @@
-import { donation_nonprofit_notif } from "../src/templates";
+import { template } from "../src/templates/donation-nonprofit-notif";
 
-const { node } = donation_nonprofit_notif.template({
+const { node } = template({
 	id: "TXN-2025-001234",
 	date: "December 17, 2025",
 	amount: { value: 250, currency: "PHP", value_usd: 4.5 },

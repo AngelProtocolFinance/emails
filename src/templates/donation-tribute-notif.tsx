@@ -18,7 +18,7 @@ function Jsx(d: IData) {
 		: d.from.full_name;
 
 	return (
-		<EmailLayout preview_text={`Donation in honor of ${d.in_honor_of}`}>
+		<EmailLayout>
 			<Text>Dear {d.notif_to_full_name},</Text>
 
 			<Text>

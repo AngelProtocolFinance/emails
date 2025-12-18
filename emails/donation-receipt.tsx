@@ -1,6 +1,6 @@
-import { donation_receipt } from "../src/templates";
+import { template } from "../src/templates/donation-receipt";
 
-const { node } = donation_receipt.template({
+const { node } = template({
 	id: "TXN-2025-001234",
 	date: "December 17, 2025",
 	amount: { value: 100, currency: "USD", value_usd: 100 },

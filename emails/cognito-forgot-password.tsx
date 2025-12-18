@@ -1,6 +1,6 @@
-import { cognito_forgot_password } from "../src/templates";
+import { template } from "../src/templates/cognito-forgot-password";
 
-const { node } = cognito_forgot_password.template({
+const { node } = template({
 	code: "739154",
 	first_name: "John",
 });

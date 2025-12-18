@@ -10,7 +10,6 @@ function Jsx({ from_fname, to_name }: IData) {
 	return (
 		<EmailLayout
 			type="fund"
-			preview_text={`${to_name} opted out of your fundraiser`}
 		>
 			<Text>Hello {from_fname},</Text>
 			<Text>

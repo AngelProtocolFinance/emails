@@ -9,7 +9,7 @@ export interface IData {
 
 function Jsx({ code, first_name }: IData) {
 	return (
-		<EmailLayout preview_text={`Reset your ${APP_NAME} password`}>
+		<EmailLayout>
 			<Text>{first_name ? `Hi ${first_name},` : "Hello,"}</Text>
 			<Text>
 				We received a request to reset your {APP_NAME} password. Use the

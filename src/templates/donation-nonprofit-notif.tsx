@@ -18,7 +18,6 @@ function Jsx(d: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`${d.to_name} has received a donation`}
 			bottom_content={
 				<Text style={{ textAlign: "center", fontSize: 12, color: "gray" }}>
 					Getting too many emails?{" "}

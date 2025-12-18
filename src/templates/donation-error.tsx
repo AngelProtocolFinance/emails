@@ -13,7 +13,6 @@ function Jsx({ donor_first_name, recipient_name, error_message }: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`Donation for ${recipient_name} failed`}
 		>
 			<Text>Hi {donor_first_name},</Text>
 			<Text>We were unable to process your donation to {recipient_name}.</Text>

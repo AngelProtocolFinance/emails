@@ -11,7 +11,6 @@ export interface IData {
 function Jsx({ first_name, invitor, endow_name }: IData) {
 	return (
 		<EmailLayout
-			preview_text={`You've been invited to administer ${endow_name}`}
 		>
 			<Text>{first_name},</Text>
 			<Text>

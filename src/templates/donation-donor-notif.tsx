@@ -20,7 +20,7 @@ function Jsx({
 	program_name,
 }: IData) {
 	return (
-		<EmailLayout preview_text="Thank you for donating">
+		<EmailLayout>
 			<Text>Hi {donor_first_name},</Text>
 
 			<Text style={{ marginBottom: 0 }}>

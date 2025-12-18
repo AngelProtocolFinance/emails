@@ -1,6 +1,6 @@
-import { registration_new } from "../src/templates";
+import { template } from "../src/templates/registration-new";
 
-const { node } = registration_new.template({
+const { node } = template({
 	reference_id: "REG-2025-001234",
 });
 
