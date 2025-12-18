@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.2.1
+
+### Patch Changes
+
+- Streamline template prop naming conventions for consistency
+
 ## 1.2.0
 
 ### Minor Changes

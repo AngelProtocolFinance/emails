@@ -2,20 +2,20 @@ import { Text } from "@react-email/components";
 import { EmailLayout } from "../components/email-layout";
 
 export interface IData {
-	first_name: string;
-	endow_name: string;
+	from_fname: string;
+	to_name: string;
 }
 
-function Jsx({ first_name, endow_name }: IData) {
+function Jsx({ from_fname, to_name }: IData) {
 	return (
 		<EmailLayout
 			type="fund"
-			preview_text={`${endow_name} opted out of your fundraiser`}
+			preview_text={`${to_name} opted out of your fundraiser`}
 		>
-			<Text>Hello {first_name},</Text>
+			<Text>Hello {from_fname},</Text>
 			<Text>
-				{endow_name} has opted out of your fundraiser. For further details
-				regarding that, please contact {endow_name} directly.
+				{to_name} has opted out of your fundraiser. For further details
+				regarding that, please contact {to_name} directly.
 			</Text>
 		</EmailLayout>
 	);
@@ -24,6 +24,6 @@ function Jsx({ first_name, endow_name }: IData) {
 export const template = (data: IData) => {
 	return {
 		node: <Jsx {...data} />,
-		subject: `${data.endow_name} opted out of your fundraiser.`,
+		subject: `${data.to_name} opted out of your fundraiser.`,
 	};
 };

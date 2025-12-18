@@ -1,12 +1,12 @@
 import { donation_receipt } from "../src/templates";
 
 const { node } = donation_receipt.template({
-	transaction_id: "TXN-2025-001234",
-	transaction_date: "December 17, 2025",
+	id: "TXN-2025-001234",
+	date: "December 17, 2025",
 	amount: { value: 100, currency: "USD", value_usd: 100 },
-	nonprofit_name: "Save The Rainforest Foundation",
+	to_name: "Save The Rainforest Foundation",
 	program_name: "Amazon Conservation",
-	donor: {
+	from: {
 		first_name: "Jane",
 		full_name: "Jane Doe",
 		address: "123 Main St, San Francisco, CA 94105",

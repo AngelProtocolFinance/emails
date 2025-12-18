@@ -3,43 +3,32 @@ import { EmailLayout } from "../components/email-layout";
 import { MailTo } from "../components/mail-to";
 import { APP_NAME, EMAILS } from "../constants";
 import { format_amount } from "../helpers";
-import type { IAmount, IDonor } from "../types";
+import type { IDonation, IDonor } from "../types";
 
-export interface IData {
-	transaction_id: string;
-	transaction_date: string;
-	amount: IAmount;
-	nonprofit_name: string;
-	donor: IDonor;
+export interface IData extends IDonation {
+	from: IDonor;
 	message: string;
 }
 
-function Jsx({
-	nonprofit_name,
-	donor,
-	message,
-	amount,
-	transaction_id,
-	transaction_date,
-}: IData) {
+function Jsx(d: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`Private message from ${donor.full_name} with ${format_amount(amount)} donation`}
+			preview_text={`Private message from ${d.from.full_name} with ${format_amount(d.amount)} donation`}
 		>
 			<Text>
-				{donor.full_name} has sent {nonprofit_name} a private message thru{" "}
-				{format_amount(amount)} donation via {APP_NAME}.
+				{d.from.full_name} has sent {d.to_name} a private message thru{" "}
+				{format_amount(d.amount)} donation via {APP_NAME}.
 			</Text>
 
 			<Text style={{ fontSize: 12, color: "gray", marginTop: 10 }}>
-				Transaction ID: {transaction_id} • {transaction_date}
+				Transaction ID: {d.id} • {d.date}
 			</Text>
 
 			<Hr />
 
 			<h2 style={{ fontSize: 14, marginBottom: 0 }}>
-				Message from {donor.first_name}
+				Message from {d.from.first_name}
 			</h2>
 			<Text
 				style={{
@@ -50,7 +39,7 @@ function Jsx({
 					fontStyle: "italic",
 				}}
 			>
-				{message}
+				{d.message}
 			</Text>
 
 			<Hr />
@@ -73,6 +62,6 @@ function Jsx({
 export const template = (data: IData) => {
 	return {
 		node: <Jsx {...data} />,
-		subject: `Private message from ${data.donor.full_name} with ${format_amount(data.amount)} donation`,
+		subject: `Private message from ${data.from.full_name} with ${format_amount(data.amount)} donation`,
 	};
 };

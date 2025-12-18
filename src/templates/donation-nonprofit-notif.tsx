@@ -4,35 +4,21 @@ import { KeyValue } from "../components/key-value";
 import { MailTo } from "../components/mail-to";
 import { DAPP_URL, EMAILS } from "../constants";
 import { format_amount } from "../helpers";
-import type { IAmount, IDonor } from "../types";
+import type { IDonation, IDonor } from "../types";
 
-export interface IData {
-	transaction_id: string;
-	transaction_date: string;
-	amount: IAmount;
-	nonprofit_name: string;
-	program_name?: string;
+export interface IData extends IDonation {
+	to_id: string;
 	is_recurring?: boolean;
-	donor?: IDonor;
+	from?: IDonor;
 	claimed?: boolean;
-	nonprofit_id: string;
-	msg_to_npo?: string;
+	from_private_msg_to_to?: string;
 }
 
-function Jsx({
-	transaction_id,
-	transaction_date,
-	amount,
-	nonprofit_name,
-	donor,
-	program_name,
-	is_recurring,
-	msg_to_npo,
-}: IData) {
+function Jsx(d: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`${nonprofit_name} has received a donation`}
+			preview_text={`${d.to_name} has received a donation`}
 			bottom_content={
 				<Text style={{ textAlign: "center", fontSize: 12, color: "gray" }}>
 					Getting too many emails?{" "}
@@ -44,33 +30,35 @@ function Jsx({
 		>
 			<Text>Hi,</Text>
 			<Text>
-				{nonprofit_name} has received a donation via Better Giving. You can also
-				see a record of this donation in your Better Giving dashboard.
+				{d.to_name} has received a donation via Better Giving. You can also see
+				a record of this donation in your Better Giving dashboard.
 			</Text>
-			<KeyValue label="Transaction ID" value={transaction_id} />
-			<KeyValue label="Transaction date" value={transaction_date} />
+			<KeyValue label="Transaction ID" value={d.id} />
+			<KeyValue label="Transaction date" value={d.date} />
 			<KeyValue
 				label="Item"
-				value={is_recurring ? "Online recurring donation" : "Online donation"}
+				value={d.is_recurring ? "Online recurring donation" : "Online donation"}
 			/>
-			<KeyValue label="Quantity" value={format_amount(amount)} />
-			{program_name && <KeyValue label="Program" value={program_name} />}
+			<KeyValue label="Quantity" value={format_amount(d.amount)} />
+			{d.program_name && <KeyValue label="Program" value={d.program_name} />}
 
-			{donor && (
+			{d.from && (
 				<>
 					<h2 style={{ fontSize: 16, marginTop: 20 }}>Donor details</h2>
-					<KeyValue label="Full name" value={donor.full_name} />
-					{donor.address && <KeyValue label="Address" value={donor.address} />}
+					<KeyValue label="Full name" value={d.from.full_name} />
+					{d.from.address && (
+						<KeyValue label="Address" value={d.from.address} />
+					)}
 				</>
 			)}
 
-			{msg_to_npo && (
+			{d.from_private_msg_to_to && (
 				<>
 					<Hr />
 					<h2 style={{ fontSize: 14, marginBottom: 0 }}>
-						A private message from {donor?.first_name || "the donor"}
+						A private message from {d.from?.first_name || "the donor"}
 					</h2>
-					<Text style={{ marginTop: 4 }}>{msg_to_npo}</Text>
+					<Text style={{ marginTop: 4 }}>{d.from_private_msg_to_to}</Text>
 				</>
 			)}
 
@@ -94,7 +82,7 @@ export const template = (data: IData) => {
 	return {
 		node: <Jsx {...data} />,
 		subject: data.claimed
-			? `Donation to ${data.nonprofit_name}`
-			: `Donation to Unclaimed NPO: ${data.nonprofit_id} ${data.nonprofit_name}`,
+			? `Donation to ${data.to_name}`
+			: `Donation to Unclaimed NPO: ${data.to_id} ${data.to_name}`,
 	};
 };

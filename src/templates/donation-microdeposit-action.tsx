@@ -4,21 +4,21 @@ import { MailTo } from "../components/mail-to";
 import { APP_NAME, DAPP_URL, EMAILS } from "../constants";
 
 export interface IData {
-	donor_first_name: string;
-	recipient_name: string;
+	from_name: string;
+	to_name: string;
 	verification_link: string;
 }
 
-function Jsx({ donor_first_name, recipient_name, verification_link }: IData) {
+function Jsx({ from_name, to_name, verification_link }: IData) {
 	return (
 		<EmailLayout
 			type="donation"
-			preview_text={`Complete your donation to ${recipient_name} - Bank verification needed`}
+			preview_text={`Complete your donation to ${to_name} - Bank verification needed`}
 		>
-			<Text>Hi {donor_first_name},</Text>
+			<Text>Hi {from_name},</Text>
 			<Text>
-				Thank you for your generous donation to {recipient_name}. To complete
-				the process, we need you to verify your bank account through a secure
+				Thank you for your generous donation to {to_name}. To complete the
+				process, we need you to verify your bank account through a secure
 				micro-deposit method.
 			</Text>
 			<Text>
@@ -65,6 +65,6 @@ function Jsx({ donor_first_name, recipient_name, verification_link }: IData) {
 export const template = (data: IData) => {
 	return {
 		node: <Jsx {...data} />,
-		subject: `Complete your donation to ${data.recipient_name} - Bank verification needed`,
+		subject: `Complete your donation to ${data.to_name} - Bank verification needed`,
 	};
 };

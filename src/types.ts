@@ -10,3 +10,11 @@ export interface IDonor {
 	full_name: string;
 	address?: string;
 }
+
+export interface IDonation {
+	id: string;
+	date: string; // pretty-utc
+	amount: IAmount;
+	to_name: string;
+	program_name?: string;
+}

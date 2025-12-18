@@ -5,34 +5,27 @@ import type { IAmount, IDonor } from "../types";
 
 export interface IData {
 	in_honor_of: string;
-	to_full_name: string;
-	donor: IDonor & { title?: string };
-	nonprofit_name: string;
+	notif_to_full_name: string;
+	from: IDonor & { title?: string };
+	to_name: string;
 	amount: IAmount;
 	from_msg?: string;
 }
 
-function Jsx({
-	in_honor_of,
-	to_full_name,
-	donor,
-	nonprofit_name,
-	amount,
-	from_msg,
-}: IData) {
-	const donor_display = donor.title
-		? `${donor.title} ${donor.full_name}`
-		: donor.full_name;
+function Jsx(d: IData) {
+	const from_display = d.from.title
+		? `${d.from.title} ${d.from.full_name}`
+		: d.from.full_name;
 
 	return (
-		<EmailLayout preview_text={`Donation in honor of ${in_honor_of}`}>
-			<Text>Dear {to_full_name},</Text>
+		<EmailLayout preview_text={`Donation in honor of ${d.in_honor_of}`}>
+			<Text>Dear {d.notif_to_full_name},</Text>
 
 			<Text>
-				{from_msg || (
+				{d.from_msg || (
 					<>
-						This is to inform you that {donor_display} has just made a donation
-						to {nonprofit_name} for {format_amount(amount)}
+						This is to inform you that {from_display} has just made a donation
+						to {d.to_name} for {format_amount(d.amount)}
 					</>
 				)}
 			</Text>
