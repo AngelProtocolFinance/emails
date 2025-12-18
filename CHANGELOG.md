@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.1.1
+
+### Patch Changes
+
+- ci
+
 ## 1.1.0
 
 ### Minor Changes
