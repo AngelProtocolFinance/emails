@@ -3,6 +3,10 @@ export {
 	admin_endow_admin_new,
 	// Banking
 	banking,
+	// Cognito
+	cognito_forgot_password,
+	cognito_resend_code,
+	cognito_signup,
 	donation_donor_notif,
 	donation_error,
 	donation_microdeposit_action,

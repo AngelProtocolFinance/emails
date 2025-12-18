@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.3.0
+
+### Minor Changes
+
+- Add Cognito verification email templates (signup, forgot-password, resend-code)
+
 ## 1.2.1
 
 ### Patch Changes

@@ -4,6 +4,10 @@
 import * as admin_endow_admin_new from "./admin-endow-admin-new";
 // Banking
 import * as banking from "./banking";
+// Cognito
+import * as cognito_forgot_password from "./cognito-forgot-password";
+import * as cognito_resend_code from "./cognito-resend-code";
+import * as cognito_signup from "./cognito-signup";
 import * as donation_donor_notif from "./donation-donor-notif";
 import * as donation_error from "./donation-error";
 import * as donation_microdeposit_action from "./donation-microdeposit-action";
@@ -35,4 +39,8 @@ export {
 	// Admin
 	admin_endow_admin_new,
 	fund_opt_out_notif,
+	// Cognito
+	cognito_signup,
+	cognito_forgot_password,
+	cognito_resend_code,
 };
