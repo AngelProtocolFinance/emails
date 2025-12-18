@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.3.1
+
+### Patch Changes
+
+- Relax @react-email/components peer dependency version constraint
+
 ## 1.3.0
 
 ### Minor Changes
