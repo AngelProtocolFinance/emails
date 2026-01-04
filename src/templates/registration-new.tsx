@@ -1,5 +1,5 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME } from "../constants";
 
 export interface IData {
@@ -8,9 +8,7 @@ export interface IData {
 
 function Jsx({ reference_id }: IData) {
 	return (
-		<EmailLayout
-			type="registration"
-		>
+		<PublicLayout type="registration">
 			<Text>Hello,</Text>
 			<Text>
 				From all of us: <strong>thanks a lot</strong> for registering to Better
@@ -38,7 +36,7 @@ function Jsx({ reference_id }: IData) {
 			<Text>
 				Looking forward to having you and your organization fully on board!
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

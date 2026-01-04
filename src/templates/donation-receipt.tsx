@@ -1,6 +1,6 @@
 import { Hr, Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
 import { KeyValue } from "../components/key-value";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, DAPP_URL } from "../constants";
 import { format_amount } from "../helpers";
 import type { IDonation, IDonor } from "../types";
@@ -18,7 +18,7 @@ export interface IData extends IDonation {
 
 function Jsx(d: IData) {
 	return (
-		<EmailLayout type="donation">
+		<PublicLayout type="donation">
 			<Text>Hi {d.from.first_name}</Text>
 			<Text>
 				We want to express our deepest gratitude for your generous{" "}
@@ -105,7 +105,7 @@ function Jsx(d: IData) {
 				tax purposes. {APP_NAME} then grants the donation to the chosen
 				nonprofit on your behalf.
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

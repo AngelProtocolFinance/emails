@@ -1,6 +1,6 @@
 {
   "name": "@better-giving/react-emails",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "React Email templates for Better Giving",
   "packageManager": "pnpm@10.26.0",
   "engines": {
@@ -34,8 +34,7 @@
     "build:preview": "email build --dir emails -p pnpm",
     "typecheck": "tsc --noEmit",
     "lint": "biome lint src",
-    "format": "biome format --write src",
-    "check": "biome check --write src",
+    "format": "biome check --write src",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "changeset publish"

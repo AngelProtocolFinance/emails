@@ -1,5 +1,5 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, DAPP_URL } from "../constants";
 
 export interface IData {
@@ -10,8 +10,7 @@ export interface IData {
 
 function Jsx({ first_name, invitor, endow_name }: IData) {
 	return (
-		<EmailLayout
-		>
+		<PublicLayout>
 			<Text>{first_name},</Text>
 			<Text>
 				You have been invited by {invitor} to become an administrator of{" "}
@@ -35,7 +34,7 @@ function Jsx({ first_name, invitor, endow_name }: IData) {
 				</Link>{" "}
 				here.
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

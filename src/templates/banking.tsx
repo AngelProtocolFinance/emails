@@ -1,6 +1,6 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
 import { MailTo } from "../components/mail-to";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, DAPP_URL, EMAILS } from "../constants";
 
 type Action = "rejected" | "approved" | "default" | "new";
@@ -27,7 +27,7 @@ const subjects: Record<Action, string> = {
 
 function Jsx({ action, account_summary, rejection_reason }: IData) {
 	return (
-		<EmailLayout
+		<PublicLayout
 			bottom_content={
 				<Text style={{ textAlign: "center", fontSize: 12, color: "gray" }}>
 					Getting too many emails?{" "}
@@ -55,7 +55,7 @@ function Jsx({ action, account_summary, rejection_reason }: IData) {
 					<MailTo email={EMAILS.hi} />
 				</Text>
 			)}
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

@@ -1,6 +1,6 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
 import { MailTo } from "../components/mail-to";
+import { PublicLayout } from "../components/public-layout";
 import { EMAILS } from "../constants";
 
 export interface IData {
@@ -10,9 +10,7 @@ export interface IData {
 
 function Jsx({ registrant_first_name, rejection_reason }: IData) {
 	return (
-		<EmailLayout
-			type="registration"
-		>
+		<PublicLayout type="registration">
 			<Text>Hi {registrant_first_name},</Text>
 			<Text>
 				Unfortunately, upon careful review from the Better Giving team we have
@@ -25,7 +23,7 @@ function Jsx({ registrant_first_name, rejection_reason }: IData) {
 				if you have any questions at all, just get in touch at{" "}
 				<MailTo email={EMAILS.hi} />
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

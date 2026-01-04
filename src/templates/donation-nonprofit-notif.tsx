@@ -1,7 +1,7 @@
 import { Hr, Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
 import { KeyValue } from "../components/key-value";
 import { MailTo } from "../components/mail-to";
+import { PublicLayout } from "../components/public-layout";
 import { DAPP_URL, EMAILS } from "../constants";
 import { format_amount } from "../helpers";
 import type { IDonation, IDonor } from "../types";
@@ -16,7 +16,7 @@ export interface IData extends IDonation {
 
 function Jsx(d: IData) {
 	return (
-		<EmailLayout
+		<PublicLayout
 			type="donation"
 			bottom_content={
 				<Text style={{ textAlign: "center", fontSize: 12, color: "gray" }}>
@@ -73,7 +73,7 @@ function Jsx(d: IData) {
 				for this donation. If you have any questions, please email{" "}
 				<MailTo email={EMAILS.support} />
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

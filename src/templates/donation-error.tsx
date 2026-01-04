@@ -1,6 +1,6 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
 import { MailTo } from "../components/mail-to";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, EMAILS } from "../constants";
 
 export interface IData {
@@ -11,9 +11,7 @@ export interface IData {
 
 function Jsx({ donor_first_name, recipient_name, error_message }: IData) {
 	return (
-		<EmailLayout
-			type="donation"
-		>
+		<PublicLayout type="donation">
 			<Text>Hi {donor_first_name},</Text>
 			<Text>We were unable to process your donation to {recipient_name}.</Text>
 			<Text style={{ background: "#FFF0F0", padding: "20px", color: "red" }}>
@@ -36,7 +34,7 @@ function Jsx({ donor_first_name, recipient_name, error_message }: IData) {
 			>
 				The {APP_NAME} Team
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

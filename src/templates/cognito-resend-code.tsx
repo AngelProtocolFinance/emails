@@ -1,5 +1,5 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME } from "../constants";
 
 export interface IData {
@@ -9,7 +9,7 @@ export interface IData {
 
 function Jsx({ code, first_name }: IData) {
 	return (
-		<EmailLayout>
+		<PublicLayout>
 			<Text>{first_name ? `Hi ${first_name},` : "Hello,"}</Text>
 			<Text>
 				You requested a new verification code for your {APP_NAME} account.
@@ -29,7 +29,7 @@ function Jsx({ code, first_name }: IData) {
 			</Text>
 			<Text>This code will expire in 24 hours.</Text>
 			<Text>If you didn't request this code, you can ignore this email.</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

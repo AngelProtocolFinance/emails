@@ -1,5 +1,5 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, DAPP_URL } from "../constants";
 
 export interface IData {
@@ -12,9 +12,7 @@ function Jsx({ org_name, registrant_first_name, endow_id }: IData) {
 	const profile_link = `${DAPP_URL}/profile/${endow_id}`;
 
 	return (
-		<EmailLayout
-			type="registration"
-		>
+		<PublicLayout type="registration">
 			<Text>Hi {registrant_first_name},</Text>
 			<Text>
 				We've got great news for you: the documentation you provided was
@@ -53,7 +51,7 @@ function Jsx({ org_name, registrant_first_name, endow_id }: IData) {
 				</Link>
 				.
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

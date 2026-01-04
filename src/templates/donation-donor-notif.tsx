@@ -1,5 +1,5 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, DAPP_URL } from "../constants";
 
 export interface IData {
@@ -20,7 +20,7 @@ function Jsx({
 	program_name,
 }: IData) {
 	return (
-		<EmailLayout>
+		<PublicLayout>
 			<Text>Hi {donor_first_name},</Text>
 
 			<Text style={{ marginBottom: 0 }}>
@@ -52,7 +52,7 @@ function Jsx({
 			</Text>
 
 			<Text>Thank you again for your generosity!</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

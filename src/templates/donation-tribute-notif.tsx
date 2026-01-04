@@ -1,5 +1,5 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { format_amount } from "../helpers";
 import type { IAmount, IDonor } from "../types";
 
@@ -18,7 +18,7 @@ function Jsx(d: IData) {
 		: d.from.full_name;
 
 	return (
-		<EmailLayout>
+		<PublicLayout>
 			<Text>Dear {d.notif_to_full_name},</Text>
 
 			<Text>
@@ -29,7 +29,7 @@ function Jsx(d: IData) {
 					</>
 				)}
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

@@ -1,6 +1,6 @@
 import { Link, Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
 import { MailTo } from "../components/mail-to";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME, DAPP_URL, EMAILS } from "../constants";
 
 export interface IData {
@@ -11,9 +11,7 @@ export interface IData {
 
 function Jsx({ from_name, to_name, verification_link }: IData) {
 	return (
-		<EmailLayout
-			type="donation"
-		>
+		<PublicLayout type="donation">
 			<Text>Hi {from_name},</Text>
 			<Text>
 				Thank you for your generous donation to {to_name}. To complete the
@@ -57,7 +55,7 @@ function Jsx({ from_name, to_name, verification_link }: IData) {
 			>
 				The {APP_NAME} Team
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

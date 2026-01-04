@@ -1,5 +1,5 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 
 export interface IData {
 	from_fname: string;
@@ -8,15 +8,13 @@ export interface IData {
 
 function Jsx({ from_fname, to_name }: IData) {
 	return (
-		<EmailLayout
-			type="fund"
-		>
+		<PublicLayout type="fund">
 			<Text>Hello {from_fname},</Text>
 			<Text>
 				{to_name} has opted out of your fundraiser. For further details
 				regarding that, please contact {to_name} directly.
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

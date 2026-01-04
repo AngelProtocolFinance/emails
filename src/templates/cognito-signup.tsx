@@ -1,5 +1,5 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME } from "../constants";
 
 export interface IData {
@@ -9,7 +9,7 @@ export interface IData {
 
 function Jsx({ code, first_name }: IData) {
 	return (
-		<EmailLayout>
+		<PublicLayout>
 			<Text>{first_name ? `Hi ${first_name},` : "Hello,"}</Text>
 			<Text>
 				Thank you for signing up with {APP_NAME}. To complete your registration,
@@ -31,7 +31,7 @@ function Jsx({ code, first_name }: IData) {
 			<Text>
 				If you didn't create an account with us, you can ignore this email.
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

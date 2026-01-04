@@ -1,5 +1,5 @@
 import { Text } from "@react-email/components";
-import { EmailLayout } from "../components/email-layout";
+import { PublicLayout } from "../components/public-layout";
 import { APP_NAME } from "../constants";
 
 export interface IData {
@@ -9,7 +9,7 @@ export interface IData {
 
 function Jsx({ code, first_name }: IData) {
 	return (
-		<EmailLayout>
+		<PublicLayout>
 			<Text>{first_name ? `Hi ${first_name},` : "Hello,"}</Text>
 			<Text>
 				We received a request to reset your {APP_NAME} password. Use the
@@ -32,7 +32,7 @@ function Jsx({ code, first_name }: IData) {
 				If you didn't request a password reset, you can safely ignore this
 				email. Your password will remain unchanged.
 			</Text>
-		</EmailLayout>
+		</PublicLayout>
 	);
 }
 

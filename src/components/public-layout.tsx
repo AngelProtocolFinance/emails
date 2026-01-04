@@ -11,16 +11,16 @@ import type { PropsWithChildren, ReactNode } from "react";
 import { APP_NAME } from "../constants";
 import { SocialLinks } from "./social-links";
 
-export type EmailLayoutProps = PropsWithChildren<{
+export type PublicLayoutProps = PropsWithChildren<{
 	type?: "registration" | "donation" | "fund";
 	bottom_content?: ReactNode;
 }>;
 
-export function EmailLayout({
+export function PublicLayout({
 	children,
 	type,
 	bottom_content,
-}: EmailLayoutProps) {
+}: PublicLayoutProps) {
 	return (
 		<Html lang="en">
 			<Head>

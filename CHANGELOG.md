@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.4.0
+
+### Minor Changes
+
+- fund-mgmt-template, new layout
+
 ## 1.3.3
 
 ### Patch Changes
