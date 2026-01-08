@@ -1,37 +1,25 @@
-import { Img, Link, Section } from "@react-email/components";
-
-const SOCIAL_ICON_BASE_URL = "https://better.giving/socials";
+import { Link, Section } from "@react-email/components";
 
 const socials = [
 	{
 		href: "https://www.linkedin.com/company/better-giving/",
-		icon: "linkedin.png",
-		alt: "LinkedIn",
-		width: 23,
+		label: "LinkedIn",
 	},
 	{
 		href: "https://www.facebook.com/BetterGivingFB/",
-		icon: "facebook.png",
-		alt: "Facebook",
-		width: 20,
+		label: "Facebook",
 	},
 	{
 		href: "https://x.com/BetterDotGiving",
-		icon: "x.png",
-		alt: "X",
-		width: 17,
+		label: "X",
 	},
 	{
 		href: "https://www.youtube.com/@BetterDotGiving",
-		icon: "youtube.png",
-		alt: "Youtube",
-		width: 20,
+		label: "Youtube",
 	},
 	{
 		href: "https://www.instagram.com/better.giving",
-		icon: "instagram.png",
-		alt: "Instagram",
-		width: 20,
+		label: "Instagram",
 	},
 ] as const;
 
@@ -40,18 +28,16 @@ export function SocialLinks() {
 		<Section style={{ textAlign: "center", paddingTop: 10 }}>
 			{socials.map((social, i) => (
 				<Link
-					key={social.alt}
+					key={social.label}
 					href={social.href}
 					style={{
 						marginRight: i < socials.length - 1 ? 15 : 0,
-						display: "inline-block",
+						color: "#3FA9F5",
+						textDecoration: "none",
+						fontSize: 14,
 					}}
 				>
-					<Img
-						src={`${SOCIAL_ICON_BASE_URL}/${social.icon}`}
-						alt={social.alt}
-						width={social.width}
-					/>
+					{social.label}
 				</Link>
 			))}
 		</Section>
