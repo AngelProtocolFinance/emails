@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 1.4.1
+
+### Patch Changes
+
+- Replace social link icons with text-only links for better email client compatibility
+
 ## 1.4.0
 
 ### Minor Changes
