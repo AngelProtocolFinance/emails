@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 2.0.0
+
+### Major Changes
+
+- rename fund opt out props
+
 ## 1.4.1
 
 ### Patch Changes

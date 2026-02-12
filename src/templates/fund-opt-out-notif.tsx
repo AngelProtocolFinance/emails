@@ -2,17 +2,17 @@ import { Text } from "@react-email/components";
 import { PublicLayout } from "../components/public-layout";
 
 export interface IData {
-	from_fname: string;
 	to_name: string;
+	opted_out_name: string;
 }
 
-function Jsx({ from_fname, to_name }: IData) {
+function Jsx({ opted_out_name, to_name }: IData) {
 	return (
 		<PublicLayout type="fund">
-			<Text>Hello {from_fname},</Text>
+			<Text>Hello {to_name},</Text>
 			<Text>
-				{to_name} has opted out of your fundraiser. For further details
-				regarding that, please contact {to_name} directly.
+				{opted_out_name} has opted out of your fundraiser. For further details
+				regarding that, please contact {opted_out_name} directly.
 			</Text>
 		</PublicLayout>
 	);
