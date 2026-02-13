@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 3.0.0
+
+### Major Changes
+
+- update deps
+
 ## 2.0.0
 
 ### Major Changes
