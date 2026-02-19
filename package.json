@@ -4,7 +4,7 @@
   "description": "React Email templates for Better Giving",
   "packageManager": "pnpm@10.26.0",
   "engines": {
-    "node": "24.x"
+    "node": "22.x"
   },
   "type": "module",
   "main": "./dist/index.js",
@@ -53,6 +53,7 @@
     "react-dom": "18.3.1",
     "react-email": "3.0.2",
     "tsup": "8.5.1",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "next": "14.2.10"
   }
 }
