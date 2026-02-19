@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 4.0.0
+
+### Major Changes
+
+- narrow down peer dep
+
 ## 3.0.0
 
 ### Major Changes
