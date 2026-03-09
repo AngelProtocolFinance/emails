@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 4.1.0
+
+### Minor Changes
+
+- add tip notification email template
+
 ## 4.0.0
 
 ### Major Changes
