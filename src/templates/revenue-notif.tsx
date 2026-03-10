@@ -7,6 +7,7 @@ export interface IData {
 	id: string;
 	date: string; // pretty-utc
 	amount: IAmount;
+	type: "fsa" | "base" | "";
 	to_name: string;
 	to_id: string;
 	is_recurring?: boolean;

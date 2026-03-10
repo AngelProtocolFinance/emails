@@ -14,7 +14,6 @@ export * as donation_nonprofit_notif from "./templates/donation-nonprofit-notif"
 export * as donation_private_message from "./templates/donation-private-message";
 export * as donation_receipt from "./templates/donation-receipt";
 export * as donation_tribute_notif from "./templates/donation-tribute-notif";
-export * as tip_notif from "./templates/tip-notif";
 // Fund
 export * as fnd_mgmt_lock_tx from "./templates/fnd-mgmt-lock-tx";
 export * as fund_opt_out_notif from "./templates/fund-opt-out-notif";
@@ -22,5 +21,6 @@ export * as fund_opt_out_notif from "./templates/fund-opt-out-notif";
 export * as registration_approved from "./templates/registration-approved";
 export * as registration_new from "./templates/registration-new";
 export * as registration_rejected from "./templates/registration-rejected";
+export * as tip_notif from "./templates/tip-notif";
 
 export type * from "./types";
