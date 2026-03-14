@@ -1,5 +1,11 @@
 # @better-giving/react-emails
 
+## 4.2.0
+
+### Minor Changes
+
+- add cognito admin create user invite template
+
 ## 4.1.0
 
 ### Minor Changes
