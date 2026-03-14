@@ -5,6 +5,7 @@ export * as banking from "./templates/banking";
 // Cognito
 export * as cognito_forgot_password from "./templates/cognito-forgot-password";
 export * as cognito_resend_code from "./templates/cognito-resend-code";
+export * as cognito_admin_create_user from "./templates/cognito-admin-create-user";
 export * as cognito_signup from "./templates/cognito-signup";
 // Donation
 export * as donation_donor_notif from "./templates/donation-donor-notif";
